@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site, waLink } from "@/config/site";
 import { Logo } from "./Logo";
 import { WhatsAppLink } from "./WhatsAppLink";
@@ -6,11 +7,11 @@ export function Header() {
   return (
     <header className="bg-ink text-white">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-5 py-4">
-        <a href="/" aria-label="Início"><Logo /></a>
+        <Link href="/" aria-label="Início"><Logo /></Link>
         <nav aria-label="Principal" className="order-last flex w-full gap-5 overflow-x-auto whitespace-nowrap text-sm text-white/80 md:order-none md:w-auto">
-          {nav.map(([h, l]) => <a key={h} href={h} className="py-1 hover:text-white">{l}</a>)}
+          {nav.map(([h, l]) => <Link key={h} href={h} className="py-1 hover:text-white">{l}</Link>)}
         </nav>
-        <a href="/contato" className="btn btn-amber hidden !py-2 text-sm md:inline-block">Diagnóstico gratuito</a>
+        <Link href="/contato" className="btn btn-amber hidden !py-2 text-sm md:inline-block">Diagnóstico gratuito</Link>
       </div>
     </header>
   );
