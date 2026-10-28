@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { site, waLink } from "@/config/site";
+import { site, waLink, waMessage } from "@/config/site";
 import { Logo } from "./Logo";
 import { WhatsAppLink } from "./WhatsAppLink";
 const nav = [["/servicos/social-media", "Social Media"], ["/servicos/trafego-pago", "Tráfego Pago"], ["/servicos/websites", "Websites"], ["/sobre", "Sobre"]];

@@ -17,3 +17,6 @@ export const site = {
 };
 export const waLink = (msg: string) =>
   `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(msg)}`;
+
+export const waMessage =
+  "Olá! Vim pelo site de vocês e gostaria de solicitar um diagnóstico gratuito para o meu negócio. Podem me ajudar?";
