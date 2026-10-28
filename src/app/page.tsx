@@ -41,7 +41,7 @@ export default function Home() {
       <Marquee />
 
       <section className="border-b border-ink/10 bg-white py-6">
-        <ul className="mx-auto grid max-w-6xl gap-3 px-5 md:grid-cols-3">
+        <ul className="mx-auto flex max-w-6xl flex-wrap justify-center gap-x-10 gap-y-3 px-5">
           {["Atendimento direto com os sócios", "Relatórios mensais claros", "Contrato transparente"].map((t) => (
             <li key={t} className="flex items-center gap-3 font-medium"><span className="grid size-8 place-items-center rounded-full bg-accent/10 text-accent"><Icon name="check" className="size-4" /></span>{t}</li>
           ))}
