@@ -55,7 +55,10 @@ export function LeadForm() {
       <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
       <button className="btn btn-primary" disabled={state === "sending"}>{state === "sending" ? "Enviando…" : "Solicitar diagnóstico gratuito"}</button>
       <div aria-live="polite">
-        {state === "ok" && <p>Recebemos seu pedido! Entraremos em contato em breve.</p>}
+        {state === "ok" && (
+          <p>Recebemos seu pedido! Entraremos em contato em breve. Quer agilizar?{" "}
+            <a className="font-semibold underline" href={waLink(msg)} target="_blank" rel="noopener noreferrer" onClick={() => track("whatsapp_click", { origin: "form_success" })}>Falar agora pelo WhatsApp</a>.</p>
+        )}
         {state === "error" && (
           <p>Não conseguimos enviar automaticamente. Seus dados já estão prontos:{" "}
             <a className="font-semibold underline" href={waLink(msg)} target="_blank" rel="noopener noreferrer" onClick={() => track("whatsapp_click", { origin: "form_fallback" })}>enviar pelo WhatsApp</a>.</p>
