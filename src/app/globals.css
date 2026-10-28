@@ -14,23 +14,10 @@
 body { background: var(--color-surface); color: var(--color-ink); font-family: var(--font-sans); }
 h1,h2,h3 { font-family: var(--font-display); }
 :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
-.btn { display:inline-block; padding:.9rem 1.4rem; border-radius:.75rem; font-weight:600; transition:transform .2s; }
-.btn:hover { transform: translateY(-2px); }
-.btn-primary { background: var(--color-ink); color:#fff; }
-.btn-ghost { border:2px solid var(--color-ink); }
+html, body { overflow-x: clip; }
+
 @keyframes draw { to { stroke-dashoffset: 0 } }
 .draw { stroke-dasharray: 400; stroke-dashoffset: 400; animation: draw 1.6s ease-out .2s forwards; }
-@media (prefers-reduced-motion: reduce){ *{animation:none!important;transition:none!important} .draw{stroke-dashoffset:0} }
-
-.btn-amber { background: var(--color-accent-light); color: var(--color-ink); }
-.btn-ghost-light { border: 2px solid rgba(255,255,255,.5); color: #fff; }
-.grid-bg { background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 48px 48px; }
-.glow { background: radial-gradient(640px circle at 85% 15%, rgba(245,158,11,.20), transparent 60%); }
-.eyebrow { font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color: var(--color-accent); }
-.dark .eyebrow { color: var(--color-accent-light); }
-
-html, body { overflow-x: clip; }
-.btn { text-align: center; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 .marquee { display: flex; width: max-content; animation: marquee 32s linear infinite; }
 .marquee:hover { animation-play-state: paused; }
@@ -40,3 +27,18 @@ html, body { overflow-x: clip; }
 .grow { transform-origin: left; animation: grow 1.2s ease-out .6s backwards; }
 @keyframes fadeup { from { opacity: 0; transform: translateY(8px); } }
 .fadeup { animation: fadeup .35s ease-out; }
+@media (prefers-reduced-motion: reduce){ *{animation:none!important;transition:none!important} .draw{stroke-dashoffset:0} }
+
+/* Camada components: os utilitários do Tailwind (hidden, md:..., etc.) têm prioridade sobre estas classes */
+@layer components {
+  .btn { display:inline-block; padding:.9rem 1.4rem; border-radius:.75rem; font-weight:600; transition:transform .2s; text-align:center; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--color-ink); color:#fff; }
+  .btn-ghost { border:2px solid var(--color-ink); }
+  .btn-amber { background: var(--color-accent-light); color: var(--color-ink); }
+  .btn-ghost-light { border: 2px solid rgba(255,255,255,.5); color: #fff; }
+  .grid-bg { background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 48px 48px; }
+  .glow { background: radial-gradient(640px circle at 85% 15%, rgba(245,158,11,.20), transparent 60%); }
+  .eyebrow { font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color: var(--color-accent); }
+  .dark .eyebrow { color: var(--color-accent-light); }
+}

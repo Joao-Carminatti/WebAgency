@@ -32,7 +32,7 @@ export function LeadForm() {
     } catch { setState("error"); }
   }
   return (
-    <form onSubmit={onSubmit} noValidate className="grid max-w-xl gap-4 rounded-card bg-white/60 p-6 shadow-sm">
+    <form onSubmit={onSubmit} noValidate className="mx-auto grid w-full max-w-xl gap-4 rounded-card bg-white/60 p-6 shadow-sm">
       {fields.map(([k, label]) => (
         <div key={k}>
           <label htmlFor={k} className="block font-medium">{label}</label>
