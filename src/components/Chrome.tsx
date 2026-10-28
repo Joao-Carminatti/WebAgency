@@ -19,7 +19,7 @@ export function Header() {
 export function Footer() {
   return (
     <footer className="bg-ink p-8 text-center text-white">
-      <p><WhatsAppLink href={waLink("Olá!")} className="underline">WhatsApp</WhatsAppLink> · <a className="underline" href={`mailto:${site.email}`}>{site.email}</a></p>
+      <p><WhatsAppLink href={waLink(waMessage)} className="underline">WhatsApp</WhatsAppLink> · <a className="underline" href={`mailto:${site.email}`}>{site.email}</a></p>
       <p className="mt-2 text-sm"><a href="/politica-de-privacidade" className="underline">Privacidade</a> · <a href="/termos" className="underline">Termos</a></p>
       <p className="mt-2 text-sm text-white/70">© {new Date().getFullYear()} {site.name}{site.cnpj && ` · CNPJ ${site.cnpj}`}</p>
     </footer>
